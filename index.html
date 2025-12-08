@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按钮点击互动小站</title>
+    <style>
+        /* 简单美化样式 */
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            background-color: #f0f2f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .counter-box {
+            font-size: 24px;
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .click-btn {
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .click-btn:hover {
+            background-color: #45a049;
+        }
+        .click-btn:active {
+            transform: scale(0.98); /* 点击时轻微缩小，反馈感 */
+        }
+    </style>
+</head>
+<body>
+    <h1>按钮点击互动小站</h1>
+    
+    <div class="counter-box">
+        你点击了 <span id="count">0</span> 次
+    </div>
+
+    <button class="click-btn" onclick="handleClick()">点我试试！</button>
+
+    <script>
+        // JS 互动逻辑：点击按钮计数
+        let clickCount = 0; // 记录点击次数（变量存状态）
+        
+        function handleClick() {
+            clickCount++; // 次数+1
+            document.getElementById('count').textContent = clickCount; // 更新显示
+            
+            // 可选：点击时加个小动画（比如变色）
+            const btn = document.querySelector('.click-btn');
+            btn.style.backgroundColor = '#ff9800'; // 临时变橙色
+            setTimeout(() => {
+                btn.style.backgroundColor = '#4CAF50'; // 1秒后恢复绿色
+            }, 200);
+        }
+    </script>
+</body>
+</html>
