@@ -1,5 +1,5 @@
 {
-  "name": "my_first_steep1",          // 你的项目名（随便填，比如仓库名）
+  "name": "myfirststeep1",          // 你的项目名（随便填，比如仓库名）
   "compatibility_date": "2025-12-09",// 用当前日期
   "assets": {
     "directory": "."               // 关键！指向根目录（你的 index.html 在这里）
